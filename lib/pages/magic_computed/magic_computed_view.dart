@@ -11,8 +11,8 @@ class MagicComputedView extends GetView<MagicComputedLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.daugherty.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.marks.value
+              ? const CircularProgressIndicator(color: Colors.purple)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class MagicComputedView extends GetView<MagicComputedLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.sknjfqlm();
+              controller.tusvi();
             },
             icon: const Icon(
               Icons.restart_alt,

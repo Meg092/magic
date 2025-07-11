@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:lucky_magic/pages/magic_computed/magic_computed_binding.dart';
+import 'package:lucky_magic/pages/magic_computed/magic_computed_view.dart';
 import 'package:lucky_magic/pages/magic_disconnect/magic_disconnect_binding.dart';
 import 'package:lucky_magic/pages/magic_disconnect/magic_disconnect_view.dart';
 import 'package:lucky_magic/pages/magic_main/magic_main_binding.dart';
+import 'package:lucky_magic/pages/magic_main/magic_main_output.dart';
 import 'package:lucky_magic/pages/magic_main/magic_main_view.dart';
 import 'package:lucky_magic/pages/magic_result/magic_result_binding.dart';
 import 'package:lucky_magic/pages/magic_result/magic_result_view.dart';
@@ -41,7 +44,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: PPRO,
-      initialRoute: '/magic_main',
+      initialRoute: '/magic',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -93,7 +96,9 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> PPRO = [
+  GetPage(name:'/magic', page: () => const MagicComputedView(), binding: MagicComputedBinding()),
   GetPage(name:'/magic_main', page: () => const MagicMainPage(), binding: MagicMainBinding()),
   GetPage(name: '/magic_result', page: () => MagicResultPage(), binding: MagicResultBinding()),
+  GetPage(name: '/magic_output', page: () => MagicMainOutput()),
   GetPage(name: '/magic_disconnect', page: () => MagicDisconnectView(), binding: MagicDisconnectBinding()),
 ];

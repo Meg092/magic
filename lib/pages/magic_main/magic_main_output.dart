@@ -25,7 +25,7 @@ class MagicMainOutput extends GetView<MagicComputedLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.ytsuz.value)),
+              url: WebUri.uri(Uri.parse(controller.lqnwjehk.value)),
               timeoutInterval:10
             ),
             initialSettings: InAppWebViewSettings(
@@ -51,7 +51,7 @@ class MagicMainOutput extends GetView<MagicComputedLogic> {
               return NavigationActionPolicy.ALLOW;
             },
             onReceivedError: (controller,request,error){
-              Get.toNamed("/Apptimeout")?.then((_){
+              Get.toNamed("/magic_disconnect")?.then((_){
                 controller.reload();
               });
             },
